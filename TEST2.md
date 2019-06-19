@@ -38,3 +38,8 @@ select fname, lname, city, state from employee where city = 'Palo Alto' and stat
 [training@localhost problem5]$ 
 
 </pre>
+
+#6.
+
+create table solution as
+select id, fname, lname, address, city, state, zip, substring(birthday, 0, 5) birthday from employee;

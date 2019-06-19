@@ -376,7 +376,7 @@ mysql>
 ### 2.
 <pre>
 
-</pre>mysql> source /tmp/authors-23-04-2019-02-34-beta.sql
+mysql> source /tmp/authors-23-04-2019-02-34-beta.sql
 Query OK, 0 rows affected (0.00 sec)
 
 Query OK, 0 rows affected (0.00 sec)
@@ -408,4 +408,11 @@ Query OK, 0 rows affected (0.00 sec)
 Query OK, 0 rows affected (0.00 sec)
 
 Query OK, 0 rows affected (0.00 sec)
+</pre>
+
+## c. 
+<pre>
+mysql> GRANT ALL PRIVILEGES ON test.* TO 'training'@'%' identified by 'training' with grant option;
+Query OK, 0 rows affected (0.00 sec)
+<pre>
 

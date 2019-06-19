@@ -30,20 +30,31 @@ Adding user training to group skcc
 
 
 ### 2. List the your instances by IP adress and DNS name ( don't use /etc/hosts for this)
+<pre>
 sudo hostnamectl set-hostname cm.skcc.com
 hostname -f
+</pre>
+<pre>
 sudo hostnamectl set-hostname mn.skcc.com
 hostname -f
+</pre>
+<pre>
 sudo hostnamectl set-hostname dn1.skcc.com
 hostname -f
+</pre>
+<pre>
 sudo hostnamectl set-hostname dn2.skcc.com
 hostname -f
+</pre>
+<pre>
 sudo hostnamectl set-hostname dn3.skcc.com
 hostname -f
+</pre>
 
 ### 3. List the Linux release you are using
 grep . /etc/*-release
 
+<pre>
 /etc/centos-release:CentOS Linux release 7.6.1810 (Core)
 /etc/os-release:NAME="CentOS Linux"
 /etc/os-release:VERSION="7 (Core)"
@@ -61,11 +72,11 @@ grep . /etc/*-release
 /etc/os-release:REDHAT_SUPPORT_PRODUCT_VERSION="7"
 /etc/redhat-release:CentOS Linux release 7.6.1810 (Core)
 /etc/system-release:CentOS Linux release 7.6.1810 (Core)
-
+</pre>
 
 ### 4. List the file system capacity for the first node (master node)
 df -h
-
+<pre>
 [root@mn ~]# df -h
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/nvme0n1p1  100G  1.3G   99G   2% /
@@ -75,12 +86,12 @@ tmpfs           7.6G   17M  7.6G   1% /run
 tmpfs           7.6G     0  7.6G   0% /sys/fs/cgroup
 tmpfs           1.6G     0  1.6G   0% /run/user/0
 tmpfs           1.6G     0  1.6G   0% /run/user/1000
-
+</pre>
 
 
 ### 5. List the command and output for yum repolist enabled
 yum repolist enabled
-
+<pre>
 [root@mn ~]# yum repolist enabled
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
@@ -92,12 +103,13 @@ repo id                             repo name                             status
 !extras/7/x86_64                    CentOS-7 - Extras                        409
 !updates/7/x86_64                   CentOS-7 - Updates                     2,076
 repolist: 12,504
-
+</pre>
 
 
 ### 6. List the /etc/passwd entries for training (only in master name node)
-sudo vi /etc/passwd 
 
+sudo vi /etc/passwd 
+<pre>
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
@@ -124,13 +136,13 @@ centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
 nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
 ntp:x:38:38::/etc/ntp:/sbin/nologin
 training:x:3800:3800::/home/training:/bin/bash
-
+</pre>
 
 
 
 ### 7. List the /etc/group entries for skcc (only in master name node)
 sudo vi /etc/group
-
+<pre>
 root:x:0:
 bin:x:1:
 daemon:x:2:
@@ -176,19 +188,19 @@ nscd:x:28:
 ntp:x:38:
 training:x:3800:
 skcc:x:3801:training
-
+</pre>
 
 
 ### 8. List output of the following commands:
 1) getent group skcc
-
+<pre>
 [root@cm ~]# getent group skcc
 skcc:x:3801:training
-
+</pre>
 
 2) getent passwd training
-
+<pre>
 [root@cm ~]# getent passwd training
 training:x:3800:3800::/home/training:/bin/bash
-
+</pre>
 

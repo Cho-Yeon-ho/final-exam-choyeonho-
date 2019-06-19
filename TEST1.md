@@ -281,3 +281,49 @@ mysql> show databases;
 12 rows in set (0.00 sec)
 
 </pre>
+
+## c. Install Cloudera Manager
+### 1. Specifically, 5.15.2 설치
+
+5.15.2 Version setup
+ Capture file
+### 2. The cluster does not Have HA mode.
+
+ Capture file (cluster)
+ 
+### 3. make sure necessary service installed
+ Capture file
+
+### 4. training  user create
+ Capture file
+
+# 2. In MySQL create the sample tables that will be used for the rest of the test
+## a. In MySQL, create a database and name it "test"
+create database test;
+<pre>
+mysql> create database test;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| amon               |
+| hue                |
+| metastore          |
+| mysql              |
+| nav                |
+| navms              |
+| oozie              |
+| performance_schema |
+| rman               |
+| scm                |
+| sentry             |
+| test               |
++--------------------+
+13 rows in set (0.00 sec)
+
+</pre>
+## b. Create 2 tables in the test databases: authors and posts.
+### 1. You will use the authors.sql and posts.sql script file that will be provided for you to generate necessary tables

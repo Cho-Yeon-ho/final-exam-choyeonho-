@@ -416,3 +416,4 @@ mysql> GRANT ALL PRIVILEGES ON test.* TO 'training'@'%' identified by 'training'
 Query OK, 0 rows affected (0.00 sec)
 <pre>
 
+

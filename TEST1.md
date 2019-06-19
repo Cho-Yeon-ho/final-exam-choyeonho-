@@ -23,7 +23,7 @@ add ->
 # 1. Create a CDH Cluster on AWS
 
 ## a.
-### 1. 
+### 1. Add the following linux accounts to all nodes
 1) ADD the following linux accounts to all nods
 useradd training -u 3800
 2) Set the password for user "training" to "training"
@@ -34,6 +34,7 @@ gpasswd -a training skcc
 4) Give training sudo capabilites
 vi /etc/sudoers
 training ALL=(ALL) NOPASSWD: ALL
+centos   ALL=(ALL) NOPASSWD: ALL
 
 
 ### 2. List the your instances by IP adress and DNS name ( don't use /etc/hosts for this)

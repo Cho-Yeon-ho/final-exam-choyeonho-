@@ -13,6 +13,7 @@ gpasswd -a training skcc
 vi /etc/sudoers
 training ALL=(ALL) NOPASSWD: ALL
 
+<pre>
 [centos@mn ~]$ sudo -i
 [root@mn ~]# useradd training -u 3800
 [root@mn ~]# passwd training
@@ -25,7 +26,7 @@ passwd: all authentication tokens updated successfully.
 [root@mn ~]# gpasswd -a training skcc
 Adding user training to group skcc
 [root@mn ~]# vi /etc/sudoers
-
+</pre>
 
 
 ### 2. List the your instances by IP adress and DNS name ( don't use /etc/hosts for this)

@@ -32,7 +32,8 @@ passwd training
 groupadd skcc
 gpasswd -a training skcc
 4) Give training sudo capabilites
-training ALL=(ALL) NOPASSWD: training
+vi /etc/sudoers
+training ALL=(ALL) NOPASSWD: ALL
 
 
 ###2. List the your instances by IP adress and DNS name ( don't use /etc/hosts for this)
@@ -48,3 +49,21 @@ sudo hostnamectl set-hostname dn3.skcc.com
 hostname -f
 
 ###3. List the Linux release you are using
+grep . /etc/*-release
+
+###4. List the file system capacity for the first node (master node)
+df -h
+
+###5. List the command and output for yum repolist enabled
+yum repolist enabled
+
+###6. List the /etc/passwd entries for training (only in master name node)
+sudo vi /etc/passwd 
+
+###7. List the /etc/group entries for skcc (only in master name node)
+sudo vi /etc/passwd
+
+###8. List output of the following commands:
+1) getent group skcc
+
+2) getent passwd training

@@ -204,3 +204,80 @@ skcc:x:3801:training
 training:x:3800:3800::/home/training:/bin/bash
 </pre>
 
+## b. Install a MySqL server
+### 1. Use MariaDB as the databsase for all ~
+mysql -u root -p
+
+<pre>
+[root@cm ~]# mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 18
+Server version: 5.6.44 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+</pre>
+### 2. List the following in your GitHub
+1) A command and output that shows the hostname of your database server
+<pre>
+mysql> SHOW VARIABLES WHERE Variable_name = 'hostname'
+    -> ;
++---------------+-------------+
+| Variable_name | Value       |
++---------------+-------------+
+| hostname      | cm.skcc.com |
++---------------+-------------+
+1 row in set (0.00 sec)
+
+</pre>
+
+2) A command and output that reports the database server version
+<pre>
+mysql> show variables like '%VERSION%'
+    -> ;
++-------------------------+------------------------------+
+| Variable_name           | Value                        |
++-------------------------+------------------------------+
+| innodb_version          | 5.6.44                       |
+| protocol_version        | 10                           |
+| slave_type_conversions  |                              |
+| version                 | 5.6.44                       |
+| version_comment         | MySQL Community Server (GPL) |
+| version_compile_machine | x86_64                       |
+| version_compile_os      | Linux                        |
++-------------------------+------------------------------+
+7 rows in set (0.00 sec)
+
+</pre>
+
+3) A command and output that lists all the databases in the server
+<pre>
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| amon               |
+| hue                |
+| metastore          |
+| mysql              |
+| nav                |
+| navms              |
+| oozie              |
+| performance_schema |
+| rman               |
+| scm                |
+| sentry             |
++--------------------+
+12 rows in set (0.00 sec)
+
+</pre>

@@ -20,10 +20,10 @@ add ->
 
 
 
-#1. Create a CDH Cluster on AWS
+# 1. Create a CDH Cluster on AWS
 
-##a.
-###1. 
+## a.
+### 1. 
 1) ADD the following linux accounts to all nods
 useradd training -u 3800
 2) Set the password for user "training" to "training"
@@ -36,7 +36,7 @@ vi /etc/sudoers
 training ALL=(ALL) NOPASSWD: ALL
 
 
-###2. List the your instances by IP adress and DNS name ( don't use /etc/hosts for this)
+### 2. List the your instances by IP adress and DNS name ( don't use /etc/hosts for this)
 sudo hostnamectl set-hostname cm.skcc.com
 hostname -f
 sudo hostnamectl set-hostname mn.skcc.com
@@ -48,22 +48,22 @@ hostname -f
 sudo hostnamectl set-hostname dn3.skcc.com
 hostname -f
 
-###3. List the Linux release you are using
+### 3. List the Linux release you are using
 grep . /etc/*-release
 
-###4. List the file system capacity for the first node (master node)
+### 4. List the file system capacity for the first node (master node)
 df -h
 
-###5. List the command and output for yum repolist enabled
+### 5. List the command and output for yum repolist enabled
 yum repolist enabled
 
-###6. List the /etc/passwd entries for training (only in master name node)
+### 6. List the /etc/passwd entries for training (only in master name node)
 sudo vi /etc/passwd 
 
-###7. List the /etc/group entries for skcc (only in master name node)
+### 7. List the /etc/group entries for skcc (only in master name node)
 sudo vi /etc/passwd
 
-###8. List output of the following commands:
+### 8. List output of the following commands:
 1) getent group skcc
 
 2) getent passwd training
